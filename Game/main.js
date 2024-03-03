@@ -1,5 +1,6 @@
 import { Player } from './player.js';
 import { InputHandler } from './input.js';
+import { Banana } from './banana.js';
 
 window.addEventListener('load', function(){
     const canvas = document.getElementById('canvas1');
@@ -13,6 +14,8 @@ window.addEventListener('load', function(){
         constructor(width, height) {
             this.width = width;
             this.height = height;
+            this.banana = new Banana(this);
+            this.pear = new Banana(this);
             this.player = new Player(this, player1);
             this.player2 = new Player(this, player2);
             this.input = new InputHandler();
@@ -24,6 +27,8 @@ window.addEventListener('load', function(){
         draw(context) {
             this.player.draw(context);
             this.player2.draw(context);
+            this.banana.draw(context);
+            this.pear.draw(context);
         }
     }
 
