@@ -4,7 +4,7 @@ export class Banana {
         this.width = 16;
         this.height = 16;
         this.x = Math.random() * this.game.width;
-        this.y = this.game.height - 32;
+        this.y = Math.random() * this.game.height;
         this.image = document.getElementById('banana');
     }
     draw(context){
